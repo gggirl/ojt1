@@ -1,4 +1,13 @@
 Ojt1::Application.routes.draw do
+  devise_for :employees
+
+  resources :employees
+
+
+  get "welcome/homepage"
+  get "welcome/loginpage"
+  get "welcome/random"
+  get "welcome/chatroom"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

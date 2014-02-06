@@ -1,0 +1,76 @@
+<h2  align="center">ほうむぺうじ</h2>
+<html>
+<head>
+
+</head>
+<body>
+	
+<table border="1" bgcolor="pink" width="1000" height="600" align="center">
+	<tr>
+		<td>
+			<nav><a href="../welcome/homepage"><h3 align="center">ホーム</h3></a></nav>
+		</td>
+		<td rowspan="3" width="700" height="200">
+			<img src="images.jpeg" alt="pic.com" width="700" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td> 
+			<nav><a href="../welcome/loginpage"><h3 align="center">ランダム</h3></a></nav>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<nav><a href="../welcome/random"><h3 align="center">ログイン</h3></a></nav>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<nav><a href="../welcome/chatroom"><h3 align="center">チャットローム</h3></a></nav>
+		</td>
+		<td rowspan="5" width="700" height="400">
+			<p align="justify">
+				<h3><b>このサイトについては</h3></b>
+				<br>
+				
+				<h2>
+				<p align="justify">
+
+
+				
+　				かいしゃ　に　しゃいん　は　じゅんばん　に　する　ことが　あります。たとえば　そうじ　のこととかはうぴょう
+				する　ことです。この　して　は　そのじゅん　ばん　に　するとき　つかえるように　さくせい　したのです。そして
+				ゆざ　おたがいに　ちゃときるように。　ちゃしと　ろむ　もはした。　しゃいんの　にんすう　を　もと　づいて
+				らんだむ おうだう　を　します。たとえば　しゃいん　が　17 いたら　ゆうぜう　が　じぶん　の　らんだむ　おうだう
+				を みて　2 しゅいかん　1 かい　ここに　できます。
+				</p>
+				</h2>
+
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h3 align="center">ログインはユーザの　管理</h3>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h3 align="center">ランダムは　しゃ員　の　順番　を　分かるため</h3>
+					</td>
+	</tr>
+	<tr>
+		<td>
+			チャットローム　は　お互いに　話すため
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/home/sumyatnoelwin/Pictures/index.jpeg" width="50" height="50">
+		</td>
+	</tr>
+</table>
+</body>
+</html>
