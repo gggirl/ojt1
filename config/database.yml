@@ -7,10 +7,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: test
+  database: user
   pool: 5
   username: root
-  password: password
+  password: cloud2014
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -20,7 +20,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: test
+  database: user_test
   pool: 5
   username: root
   password: password
@@ -30,7 +30,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: test
+  database: user_production
   pool: 5
   username: root
   password: password
