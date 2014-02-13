@@ -3,6 +3,7 @@ class CreateEmployees < ActiveRecord::Migration
     create_table :employees do |t|
       t.integer :userid
       t.string :username
+      t.string :email
       t.binary :password
       t.binary :confirmpassword
       t.integer :age

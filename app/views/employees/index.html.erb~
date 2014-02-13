@@ -4,7 +4,6 @@
   <tr>
     <th>Userid</th>
     <th>Username</th>
-    <th>Email</th>
     <th>Birthday</th>
     <th>Nrcno</th>
     <th>Gender</th>
@@ -22,7 +21,6 @@
   <tr>
     <td><%= employee.userid %></td>
     <td><%= employee.username %></td>
-    <td><%= employee.email %></td>
     <td><%= employee.birthday %></td>
     <td><%= employee.NRCNo %></td>
     <td><%= employee.Gender %></td>

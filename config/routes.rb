@@ -1,5 +1,6 @@
 Ojt1::Application.routes.draw do
-  devise_for :employees
+  devise_for :employees, :controller => { :registration => 'registration'}
+  match 'dashboard' => 'home#dashboard'
 
   resources :employees
 
@@ -8,6 +9,7 @@ Ojt1::Application.routes.draw do
   get "welcome/loginpage"
   get "welcome/random"
   get "welcome/chatroom"
+  root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
