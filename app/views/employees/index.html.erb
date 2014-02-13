@@ -2,10 +2,16 @@
 
 <table>
   <tr>
-    <th>Empid</th>
-    <th>Empname</th>
-    <th>Ordernumber</th>
-    <th>Chatid</th>
+    <th>Userid</th>
+    <th>Username</th>
+    <th>Birthday</th>
+    <th>Nrcno</th>
+    <th>Gender</th>
+    <th>Specialize</th>
+    <th>Phno</th>
+    <th>Address</th>
+    <th>Travelfee</th>
+    <th>Entrydate</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +19,16 @@
 
 <% @employees.each do |employee| %>
   <tr>
-    <td><%= employee.empid %></td>
-    <td><%= employee.empname %></td>
-    <td><%= employee.ordernumber %></td>
-    <td><%= employee.chatid %></td>
+    <td><%= employee.userid %></td>
+    <td><%= employee.username %></td>
+    <td><%= employee.birthday %></td>
+    <td><%= employee.NRCNo %></td>
+    <td><%= employee.Gender %></td>
+    <td><%= employee.specialize %></td>
+    <td><%= employee.phno %></td>
+    <td><%= employee.address %></td>
+    <td><%= employee.travelfee %></td>
+    <td><%= employee.entrydate %></td>
     <td><%= link_to 'Show', employee %></td>
     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
     <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>

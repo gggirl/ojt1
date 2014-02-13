@@ -1,14 +1,13 @@
 class Employee < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :lockable, :timeoutable and :activatable
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
-  attr_accessible :chatid, :empid, :empname, :ordernumber
-  validates :empid, :empname, :ordernumber, :chatid, presence: true
-  validates :empid, :ordernumber, :chatid, presence:true, numericality: true
-  validates :empid, :ordernumber, :chatid, uniqueness: { case_sensitive: false}
-  validates :empname, format: { with: /\A[a-z]+\Z/}
+  attr_accessible :Gender, :NRCNo, :address, :birthday, :password_confirmation, :entrydate, :password, :phno, :specialize, :travelfee, :userid, :username
+  #attr_accessor :username
+  validates :userid, :username, :password, :password_confirmation, :NRCNo, :specialize, :phno, :address, :travelfee, presence: true
+  validates :userid, :phno, :travelfee, numericality: { only_integer: true }
+  validates_presence_of :password_confirmation  
+  validates_confirmation_of :password, :message => "should match passwords"
+  #validates :username, format: { with: /\A([^@\s]+)((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
+  	#validates :password, :confirmation => true
+  validates :username, format: { with: %r{\A[a-zA-Z][a-zA-Z0-9\s]*\z} }
 end
+ 
+
