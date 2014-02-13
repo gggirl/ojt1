@@ -41,3 +41,4 @@
 <br />
 
 <%= link_to 'New Employee', new_employee_path %>
+<%= link_to '<button type="button">CSV</button>'.html_safe, employees_path(format: "csv") %>

@@ -2,11 +2,14 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    #@employees = Employee.all
+    @employees = Employee.order("RAND()")
+
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @employees }
+      #format.json { render json: @employees }
+      format.csv { send_data Employee.to_csv(@employees)}
     end
   end
 

@@ -18,6 +18,25 @@ class Employee < ActiveRecord::Base
   	#validates :password, :confirmation => true
   validates :username, format: { with: %r{\A[a-zA-Z][a-zA-Z0-9\s]*\z} }
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
+
+#for mon
+  def self.to_csv test
+  CSV.generate do |csv|
+        csv << ["Id", "Name"]
+     test.each do |employee|
+        #csv << employee.attributes.values_at(*columns_names)
+        csv << [employee.userid, employee.username]
+    end
+end
+end
+
+
+
+
+
+
+
 end
  
 
