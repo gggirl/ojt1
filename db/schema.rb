@@ -11,11 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213075104) do
+ActiveRecord::Schema.define(:version => 20140218061500) do
 
-  create_table "contacts", :force => true do |t|
-    t.string "mobile",  :default => "", :null => false
-    t.string "address",                 :null => false
+  create_table "employee_randoms", :force => true do |t|
+    t.integer  "userid"
+    t.string   "username"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "employeerandoms", :force => true do |t|
+    t.string   "Name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "employees", :force => true do |t|
@@ -47,7 +55,10 @@ ActiveRecord::Schema.define(:version => 20140213075104) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
-  add_index "employees", ["reset_password_token"], :name => "index_employees_on_reset_password_token", :unique => true
+  create_table "random_numbers", :force => true do |t|
+    t.string   "Name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

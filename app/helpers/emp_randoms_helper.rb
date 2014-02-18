@@ -1,0 +1,2 @@
+module EmpRandomsHelper
+end

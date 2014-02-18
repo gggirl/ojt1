@@ -1,4 +1,29 @@
 Ojt1::Application.routes.draw do
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+ 
+
+
+  resources :random_numbers do
+    collection { post :import }
+  end
+
+
+  resources :employeerandoms do
+    collection { post :import }
+  end
+  root to: 'employeerandoms#index'
+
   devise_for :employees, :controller => { :registration => 'registration'}
   match 'dashboard' => 'home#dashboard'
 

@@ -1,0 +1,2 @@
+module EmployeeRandsHelper
+end

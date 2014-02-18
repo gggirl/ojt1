@@ -1,0 +1,2 @@
+module EmpRandNosHelper
+end
