@@ -1,3 +1,5 @@
+
+<p id="notice"><%= notice %></p>
 <h1>Listing random_numbers</h1>
 
 <table>
@@ -25,6 +27,6 @@
 
 <%= link_to 'New Random number', new_random_number_path %>
 <%= form_tag import_random_numbers_path, multipart: true do %>
-   <%= file_field_tag :file, accept: 'text/csv' %>
+   <%= file_field_tag :file, accept: 'csv' %>
    <%= submit_tag "Import" %>
 <% end %>

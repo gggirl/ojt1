@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#for mon
+#gem 'csv_validator'
+#gem 'Paperclip'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:

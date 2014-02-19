@@ -14,6 +14,9 @@ Ojt1::Application.routes.draw do
  
 
 
+  resources :cleaning
+  root to: 'cleaning#index'
+
   resources :random_numbers do
     collection { post :import }
   end

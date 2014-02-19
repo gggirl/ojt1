@@ -1,19 +1,32 @@
 class RandomNumbersController < ApplicationController
   # GET /random_numbers
   # GET /random_numbers.json
+
   def index
     @random_numbers = RandomNumber.all
-
+      
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.erb 
       format.json { render json: @random_numbers }
     end
   end
 
 #for mon
 def import
+
+  begin(
+  #RandomNumber.delete_all
   RandomNumber.import(params[:file])
-  redirect_to random_numbers_path, notice: "Employee Random Number imported."
+  
+  redirect_to random_numbers_path, notice: "Employee Random Number imported.")
+   
+  rescue
+
+   redirect_to random_numbers_path, notice: "Invalid CSV file format."
+  end
+
+end
+
 end
 
 
@@ -90,4 +103,4 @@ end
       format.json { head :no_content }
     end
   end
-end
+
