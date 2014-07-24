@@ -1,0 +1,22 @@
+<%= form_for(@room_message) do |f| %>
+  <% if @room_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room_message.errors.count, "error") %> prohibited this room_message from being saved:</h2>
+
+      <ul>
+      <% @room_message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= render 'chat' %>
+
+  <div class="field">
+   
+    <%= f.text_field :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit value="Send" %>
+  </div>
+<% end %>

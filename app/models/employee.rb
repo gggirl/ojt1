@@ -32,13 +32,9 @@ class Employee < ActiveRecord::Base
     end
 end
 end
-
-
-
-
-
-
-
 end
+
+
+
  
 

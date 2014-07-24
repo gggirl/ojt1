@@ -1,0 +1,68 @@
+
+
+
+<h1>Chat</h1>
+<ul id="chat">
+    <%= render 'msg' %>
+</ul>
+<!--<table>-->
+  <!--<tr>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>-->
+
+<!--<% @chattings.each do |chatting| %>
+  <tr>
+    <td><%= chatting.message %></td>
+    <td><%= link_to 'Show', chatting %></td>
+    <td><%= link_to 'Edit', edit_chatting_path(chatting) %></td>
+    <td><%= link_to 'Destroy', chatting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />-->
+
+<!--<%= link_to 'New Chatting', new_chatting_path %>-->
+
+
+
+<%= form_for Chatting.new , :remote => true do |f| %>
+  
+    
+    <%= f.text_field :message %>
+ 
+    <%= f.submit value="Send" %>
+    
+   
+<% end %>
+
+
+
+<%= subscribe_to "/chattings/new" %>
+<script>
+$(function(){
+
+  <% publish_to "/chattings/new" do %>
+ 
+  
+  $("#chat").append("<%= j render 'msg' %>");
+    <% Chatting.destroy_all %>
+  
+
+ $("#new_chatting")[0].reset();
+ 
+  
+ <% end %>
+ 
+ 
+
+    
+
+    
+ });
+
+
+</script>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Content:</b>
+  <%= @chatcontent.content %>
+</p>
+
+<% @chatcontent.room_message.each do|msg| %>
+  <%= msg.message %>
+
+
+
+
+<% end %>
+<%= form_for ([@chatcontent, @chatcontent.room_message.build]) do |f| %>
+<p>
+	
+    <%= label :message %><br />
+    <%= text_field :message %>
+  </p>
+<% end %>
+<%= link_to 'Edit', edit_chatcontent_path(@chatcontent) %> |
+<%= link_to 'Back', chatcontents_path %>

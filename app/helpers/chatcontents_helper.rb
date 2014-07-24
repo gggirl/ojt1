@@ -1,0 +1,2 @@
+module ChatcontentsHelper
+end

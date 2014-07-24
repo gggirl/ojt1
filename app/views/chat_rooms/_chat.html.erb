@@ -1,0 +1,9 @@
+<h1> Chat </h1>
+
+<table border="1">
+<% @room_messages.each do |room_message| %>
+<tr>
+<%= room_message.message %>
+</tr>
+<% end %>
+</table>

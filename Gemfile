@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-#for mon
 #gem 'csv_validator'
 #gem 'Paperclip'
 gem 'rails', '3.2.13'
@@ -26,6 +25,10 @@ end
 
 gem 'jquery-rails'
 
+gem 'private_pub'
+gem 'cookiejar', "0.3.0"
+ gem 'thin'
+ gem 'faye'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

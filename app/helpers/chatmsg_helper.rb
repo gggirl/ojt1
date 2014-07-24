@@ -1,0 +1,2 @@
+module ChatmsgHelper
+end

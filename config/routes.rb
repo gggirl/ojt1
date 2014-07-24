@@ -10,9 +10,55 @@ Ojt1::Application.routes.draw do
   
 
 
+  resources :chattings
+   #get '/message' => 'chattings#new', :as => :new
+   # root to: 'chattings#news'
 
+  resources :user_msgs
+
+
+  resources :chatiws
+
+
+  #resources :msg_chat_rooms
+
+
+  resources :room_messages
+   #get '/chat1' => 'room_messages#new', :as => :new
+
+  resources :chatcontents
+
+
+  #get "chatmsg/index"
+  resources :chatmsg
+    root to: 'chatmsg#index'
+
+  get "chatmsg/create"
+
+  get "room/index"
+
+  get "room/new"
+
+  resources :chat_rooms
+    #root to: 'chat_rooms#new'
+    #get '/chats' => 'chat_rooms#new', :as => :chat
+  resources :chats
+   root to: 'chats#index'
+
+  
+
+ # get "chats/room"
+
+ get '/chatroom' => 'chats#room', :as => :chat
+
+ get '/login' => 'sessions#new', :as => :login
+ post '/login' => 'sessions#create', :as => :login
+ #get '/login' => 'chats#room', :as => :chat
  
 
+ # get "sessions/new"
+
+  #get "sessions/create"
 
   resources :cleaning
   root to: 'cleaning#index'

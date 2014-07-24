@@ -1,0 +1,21 @@
+<%= form_for(@chatiw) do |f| %>
+  <% if @chatiw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chatiw.errors.count, "error") %> prohibited this chatiw from being saved:</h2>
+
+      <ul>
+      <% @chatiw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

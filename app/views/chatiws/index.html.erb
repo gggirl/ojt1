@@ -1,0 +1,23 @@
+<h1>Listing chatiws</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chatiws.each do |chatiw| %>
+  <tr>
+    <td><%= chatiw.content %></td>
+    <td><%= link_to 'Show', chatiw %></td>
+    <td><%= link_to 'Edit', edit_chatiw_path(chatiw) %></td>
+    <td><%= link_to 'Destroy', chatiw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chatiw', new_chatiw_path %>

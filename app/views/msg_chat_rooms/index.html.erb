@@ -1,0 +1,31 @@
+<!--<h1>Listing msg_chat_rooms</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @msg_chat_rooms.each do |msg_chat_room| %>
+  <tr>
+    <td><%= msg_chat_room.content %></td>
+    <td><%= link_to 'Show', msg_chat_room %></td>
+    <td><%= link_to 'Edit', edit_msg_chat_room_path(msg_chat_room) %></td>
+    <td><%= link_to 'Destroy', msg_chat_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Msg chat room', new_msg_chat_room_path %>-->
+<h1>Chat</h1>
+    <%= render @msg_chat_rooms %>
+<%= form_for MsgChatRoom.new, remote: true do |f| %>
+<%= f.text_area :content %><br>
+  <%= f.text_field :content %>
+  <%= f.submit "Send" %>
+  <% end %>
+  <%= subscribe_to "/msg_chat_rooms/new" %>

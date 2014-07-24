@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Message:</b>
+  <%= @chatting.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_chatting_path(@chatting) %> |
+<%= link_to 'Back', chattings_path %>
