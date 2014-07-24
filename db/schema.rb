@@ -13,17 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20140218061500) do
 
-  create_table "employee_randoms", :force => true do |t|
-    t.integer  "userid"
-    t.string   "username"
+  create_table "comments", :force => true do |t|
+    t.string   "commenter"
+    t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "employeerandoms", :force => true do |t|
-    t.string   "Name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "contacts", :force => true do |t|
+    t.string "mobile",  :default => "", :null => false
+    t.string "address",                 :null => false
   end
 
   create_table "employees", :force => true do |t|
@@ -55,10 +54,30 @@ ActiveRecord::Schema.define(:version => 20140218061500) do
     t.string   "last_sign_in_ip"
   end
 
+  add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
+  add_index "employees", ["reset_password_token"], :name => "index_employees_on_reset_password_token", :unique => true
+
+  create_table "forums", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "random_numbers", :force => true do |t|
     t.string   "Name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "replies", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "forum_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "replies", ["forum_id"], :name => "index_replies_on_forum_id"
 
 end

@@ -1,4 +1,9 @@
 Ojt1::Application.configure do
+  #config.gem "rspec", :lib => false
+  config.gem "rspec-rails", :lib => false
+  config.gem "webrat", :lib => false
+  config.gem "cucumber", :lib => false
+  #config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
   # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's

@@ -1,0 +1,9 @@
+Feature: Show allocation list
+  As a user to the website
+  I want to see registered allocation listed
+  so I can know if the site has allocation
+
+    Scenario: Viewing allocation lists
+      Given I am logged in
+      When I look at the list of allocation
+      Then I should see the allocation lists

@@ -1,0 +1,13 @@
+Feature: Edit Allocation
+  As a registered user of the website
+  I want to edit the allocation name
+  so I can change the allocation name
+
+    Scenario: I sign in and edit the allocation
+      Given I am logged in
+        And I registered assets
+        And I registered allocation
+      When I look at the list of allocation
+      Then I should see the allocation lists
+      When I edit the allocation name
+      Then I should see edit allocation name
