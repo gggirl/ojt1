@@ -5,3 +5,11 @@
 require File.expand_path('../config/application', __FILE__)
 
 Ojt1::Application.load_tasks
+if defined?(RSpec)
+	desc 'Run factory specs.'
+	RSpec::Core::RakeTask.new(:factory_specs) do |t|
+		t.pattern = './spec/requests/employees_spec.rb'
+	end
+end
+
+task spec: :factory_specs

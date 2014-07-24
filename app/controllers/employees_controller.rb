@@ -1,10 +1,14 @@
+
 class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
+ 
+  #before_filter :authenticate_user!, :except => [:some_action_without_auth]
   def index
     #@employees = Employee.all
-    @employees = Employee.order("RAND()")
-
+    #@employee_pages = Paginate.new self, Employee.count, 10, params[:page]
+    require 'will_paginate'
+    @employees = Employee.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -44,17 +44,16 @@ ActiveRecord::Schema.define(:version => 20140227043410) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "employee_randoms", :force => true do |t|
-    t.integer  "userid"
-    t.string   "username"
+  create_table "comments", :force => true do |t|
+    t.string   "commenter"
+    t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "employeerandoms", :force => true do |t|
-    t.string   "Name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "contacts", :force => true do |t|
+    t.string "mobile",  :default => "", :null => false
+    t.string "address",                 :null => false
   end
 
   create_table "employees", :force => true do |t|
@@ -86,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20140227043410) do
     t.string   "last_sign_in_ip"
   end
 
+<<<<<<< HEAD
   create_table "messages", :force => true do |t|
     t.text     "content"
     t.datetime "created_at", :null => false
@@ -94,6 +94,14 @@ ActiveRecord::Schema.define(:version => 20140227043410) do
 
   create_table "msg_chat_rooms", :force => true do |t|
     t.string   "content"
+=======
+  add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
+  add_index "employees", ["reset_password_token"], :name => "index_employees_on_reset_password_token", :unique => true
+
+  create_table "forums", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+>>>>>>> a5fa04c9126fb944b4ee80886f7e71ade6159263
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -104,12 +112,20 @@ ActiveRecord::Schema.define(:version => 20140227043410) do
     t.datetime "updated_at", :null => false
   end
 
+<<<<<<< HEAD
   create_table "room_messages", :force => true do |t|
     t.string   "message"
+=======
+  create_table "replies", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "forum_id"
+>>>>>>> a5fa04c9126fb944b4ee80886f7e71ade6159263
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+<<<<<<< HEAD
   create_table "user_msgs", :force => true do |t|
     t.text     "message"
     t.integer  "Chatiw_id"
@@ -118,5 +134,8 @@ ActiveRecord::Schema.define(:version => 20140227043410) do
   end
 
   add_index "user_msgs", ["Chatiw_id"], :name => "index_user_msgs_on_Chatiw_id"
+=======
+  add_index "replies", ["forum_id"], :name => "index_replies_on_forum_id"
+>>>>>>> a5fa04c9126fb944b4ee80886f7e71ade6159263
 
 end

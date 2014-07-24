@@ -1,12 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ojt1</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 <% if employee_signed_in? %>
+<div class="content" width="400px" height="200px">
+<div class="col-lg-4">
+         <img class="img-circle" alt="140x140" data-src="holder.js/140v140" style="width: 140px; height: 140px;" src="data:image/svg+xml;base64,PHN2...wiPjE0MHgxNDA8L3R1eQ+PC9zdmc+"></img>
+          <h2>Ruby On Rails</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="http://guides.rubyonrails.org" role="button">View details »</a></p>
+  </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+       
+          <%= image_tag("libimg.jpeg" , :alt=>"Android") %>
+          <h2>Android</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="http://www.android.com/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <%= image_tag("chatimg1.gif" , :alt=>"IOS") %>
+          <h2>IOS</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="http://www.apple.com/ios" role="button">View details »</a></p>
+        </div>
+ </div><!-- /.col-lg-4 -->
 
-<h3>you have successfully signed in</h3>
-<%= link_to "Sign Out", destroy_employee_session_path, :method => :delete %>
+<%= yield %>
 
+
+</body>
+</html>
 <% else %>
-
-<h1>welcome to rails community</h1>
-<%= link_to "Sign In", new_employee_session_path, :method => :get %>
-<%= link_to "Sign up", new_employee_registration_path, :method => :get %>
-
+ <h1 align=center>welcome!</h1>
+<p align=center><%= link_to "Sign In", new_employee_session_path, :method => :get %></p>
+<p align=center><%= link_to "New employee", new_employee_path, :method => :get %></p>
 <% end %>
+
+
+
+

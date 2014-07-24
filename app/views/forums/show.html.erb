@@ -1,0 +1,63 @@
+<%- model_class = Forum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <h1><dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt></h1>
+  <h1><dd><%= @forum.title %></dd></h1>
+  <!--<dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>-->
+      <dt><%= @forum.content %></dt>
+</dl>
+ <tbody>
+ <% @forum.replies.each do |reply| %>
+  <p>
+    <!--<strong>Commenter:</strong>-->
+    <%= reply.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= reply.body %>
+  </p>
+
+  <p>
+    <%= link_to t('.delete comment', :default => t("helpers.links.delete")), [reply.forum, reply],
+                 :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+  </p>
+ <% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@forum, @forum.replies.build]) do |f| %>
+
+  <!--<p>
+    <%= f.label :commenter %><br />
+    <%= f.text_field :commenter %>
+  </p> -->
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+     <!--<div class="form-actions">-->
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                forums_path, :class => 'btn' %>
+  <!--</div>-->
+  </p>
+<% end %>
+
+<!--<div class="form-actions">-->
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              forums_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_forum_path(@forum), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              forum_path(@forum),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+<!--</div>-->

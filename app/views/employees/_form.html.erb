@@ -1,70 +1,152 @@
-<%= form_for(@employee) do |f| %>
-  <% if @employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
-
-      <ul>
-      <% @employee.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @employee, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :userid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :userid, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :username, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password_confirmation, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :age, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :age, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birthday, :class => 'control-label' %>
+    <div class="controls">
+      
 
-  <div class="field">
-    <%= f.label :userid %><br />
-    <%= f.number_field :userid %>
+      <%= f.date_select :birthday, :start_year => 1880, :class => 'date_select' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+  <div class="control-group">
+    <%= f.label :NRCNo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :NRCNo, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday, :start_year => 1880 %>
-  </div>
-  <div class="field">
-    <%= f.label :NRCNo %><br />
-    <%= f.text_field :NRCNo %>
-  </div>
-  <div class="field">
-    <%= f.label :Gender %><br />
-    <%= f.radio_button :Gender,'Male' %><%= f.label :gender,'Male' %>
+  <div class="control-group">
+    <%= f.label :Gender, :class => 'control-label' %>
+    <div class="controls">
+      <!--<%= f.text_field :Gender, :class => 'text_field' %>-->
+      <%= f.radio_button :Gender,'Male' %><%= f.label :gender,'Male' %>
     <%= f.radio_button :Gender,'Female' %><%= f.label :gender,'Female' %>
+
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :specialize %><br />
-    <%= f.text_field :specialize %>
+  <div class="control-group">
+    <%= f.label :specialize, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :specialize, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :phno %><br />
-    <%= f.number_field :phno %>
+  <div class="control-group">
+    <%= f.label :phno, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :phno, :class => 'number_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :address, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :travelfee %><br />
-    <%= f.number_field :travelfee %>
+  <div class="control-group">
+    <%= f.label :travelfee, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :travelfee, :class => 'number_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :entrydate %><br />
-    <%= f.date_select :entrydate, :start_year => 1880 %>
+  <!--<div class="control-group">
+    <%= f.label :entryyear, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :entryyear, :class => 'number_field' %>
+    </div>
+  </div>-->
+  <div class="control-group">
+    <%= f.label :entrydate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :entrydate, :start_year => 1880, :class => 'date_select' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <!--<div class="control-group">
+    <%= f.label :encrypted_password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :encrypted_password, :class => 'text_field' %>
+    </div>
   </div>
+  <div class="control-group">
+    <%= f.label :reset_password_token, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :reset_password_token, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :reset_password_sent_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :reset_password_sent_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :remember_created_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :remember_created_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :current_sign_in_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :current_sign_in_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_sign_in_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :last_sign_in_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :current_sign_in_ip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :current_sign_in_ip, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_sign_in_ip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_sign_in_ip, :class => 'text_field' %>
+    </div>
+  </div>-->
+
+  <!--<div class="form-actions">-->
+    <p align=center><%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employees_path, :class => 'btn' %></p>
+  <!--</div>-->
 <% end %>

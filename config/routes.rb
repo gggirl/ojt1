@@ -1,14 +1,29 @@
 Ojt1::Application.routes.draw do
   
 
+  resources :forums do
+    resources :replies
+  end
+
+  ##get "home/index"
+  #get "devise/sessions"
+  get "home/homepage"
+  get "home/dashboard"
+  
+  #get "devise/sessions"
+  
+  resources :home
+  root to: 'home#homepage'
+  
+  devise_scope :employee do
+    get 'login', to: 'devise/sessions#new'
+  end
+  
+  devise_for :employees, :controller => { :registration => 'registration'}
+  match 'dashboard' => 'home#dashboard'
   
 
-
-  
-
-
-  
-
+<<<<<<< HEAD
 
   resources :chattings
    #get '/message' => 'chattings#new', :as => :new
@@ -59,9 +74,16 @@ Ojt1::Application.routes.draw do
  # get "sessions/new"
 
   #get "sessions/create"
+=======
+  resources :employees
+  root to: 'employees#index'
+>>>>>>> a5fa04c9126fb944b4ee80886f7e71ade6159263
 
   resources :cleaning
   root to: 'cleaning#index'
+
+  #resources :cleaning
+  #root to: 'cleaning#index'
 
   resources :random_numbers do
     collection { post :import }
@@ -73,17 +95,14 @@ Ojt1::Application.routes.draw do
   end
   root to: 'employeerandoms#index'
 
-  devise_for :employees, :controller => { :registration => 'registration'}
-  match 'dashboard' => 'home#dashboard'
-
-  resources :employees
-
 
   get "welcome/homepage"
   get "welcome/loginpage"
   get "welcome/random"
   get "welcome/chatroom"
   root :to => 'home#index'
+
+  #get "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

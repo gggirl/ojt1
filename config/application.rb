@@ -6,7 +6,10 @@ require 'rails/all'
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a5fa04c9126fb944b4ee80886f7e71ade6159263
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))

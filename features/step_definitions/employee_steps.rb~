@@ -1,0 +1,75 @@
+# encoding: utf-8
+### UTILITY METHODS ###
+
+def create_employee
+  @employee = Fabricate(:employee)
+end
+
+def delete_employee
+  #@employee ||= Employee.where(:name => @employee[:name]).first
+  @employee.destroy unless @employee.nil?
+end
+
+def find_employee
+ # @employee ||= Employee.where(:name => @category[:name]).first
+end
+
+def employee_register
+  #delete_place
+  visit '/employees/new'
+  select "2013", :from => 'employee_to_1i'
+  select "2月", :from => 'employee__to_2i'
+  select "2", :from => 'employee__to_3i'
+  select "2013", :from => 'employee__from_1i'
+  select "1月", :from => 'employee__from_2i'
+  select "2", :from => 'employee__from_3i'
+  select "First User", :from => 'employee__user_name'
+  select "Asset", :from => 'employee__asset_name'
+  click_button "登録する"
+end
+
+### GIVEN ###
+
+Given /^I reached to employee lists$/ do
+  visit '/employees'
+end
+
+Given /^I registered employee$/ do
+  create_allocation
+  employee_register
+end
+
+### WHEN ###
+
+When /^I register employee with valid data$/ do
+  create_employee
+  employee_register
+end
+
+When /^I register with an invalid employee name$/ do
+  create_employee
+  @employee = @employee.merge(:name => "")
+  employee_register
+end
+
+When /^I edit the employee name$/ do
+ @employee ||= Employee.where(:user_name => @employee[:user_name]).first 
+end
+
+When /^I look at the list of employee$/ do
+  visit '/employees'
+end
+
+### THEN ###
+
+Then /^I should see the employee lists$/ do
+  page.should have_content "割り当て変更"
+end
+
+Then /^I should see successful message of allocation$/ do
+  page.should have_content "#{@allocation[:employee_user_name]}"
+end
+
+Then /^I should see edit employee name$/ do
+  #page.should have_content ""
+end

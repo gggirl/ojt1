@@ -1,0 +1,13 @@
+Feature: employee register
+  In order to register the employee 
+  As a user
+  I want to be able to register employee 
+
+    Scenario: employee registered with valid data
+      Given I am logged in
+        And I registered assets
+      And I reached to employee lists
+      When I register employee with valid data
+      Then I should see successful message of employee
+
+
